@@ -1,81 +1,38 @@
-.chessboard{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    width: 600px;
-    height: 600px;
-    font-family: "Segoe UI Symbol", Arial, sans-serif;   
-}
-.black{
-    background-color: #000000;
-}
-.white{
-    background-color: #ffffff;
-}
-.chessboard > div {
+body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 40px;
-  font-family: "Segoe UI Symbol", Arial, sans-serif;
-  cursor: default;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ccc;
+  font-family: Arial, sans-serif;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  border: 3px solid #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  font-size: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   user-select: none;
 }
 
-
-.black.piece {
-  color: black;
+/* Black and white squares */
+.black {
+  background-color: #000000; /* black square */
+  color: white; /* piece color on black square */
 }
 
-.white.piece {
-  color: #f0d9b5; 
-}
-
-
-.pawn::after {
-  content: "♟";
-}
-
-.white .pawn::after {
-  content: "♙"; 
-}
-
-.rook::after {
-  content: "♜";
-}
-
-.white .rook::after {
-  content: "♖";
-}
-
-.knight::after {
-  content: "♞";
-}
-
-.white .knight::after {
-  content: "♘";
-}
-
-.bishop::after {
-  content: "♝";
-}
-
-.white .bishop::after {
-  content: "♗";
-}
-
-.queen::after {
-  content: "♛";
-}
-
-.white .queen::after {
-  content: "♕";
-}
-
-.king::after {
-  content: "♚";
-}
-
-.white .king::after {
-  content: "♔";
+.white {
+  background-color: #ffffff; /* white square */
+  color: black; /* piece color on white square */
 }
